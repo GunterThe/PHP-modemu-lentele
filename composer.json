@@ -1,9 +1,0 @@
-{
-    "name": "gunter/php-modemu-lentele",
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
-    }
-}
