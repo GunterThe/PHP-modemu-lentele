@@ -54,7 +54,7 @@ $teritorijos = $terStmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <form method="post">
                     <div class="mb-3">
-                        <label class="form-label">Moketojo_kodas</label>
+                        <label class="form-label">Mokėtojo kodas</label>
                         <input name="Moketojo_kodas" class="form-control">
                     </div>
 
@@ -70,7 +70,7 @@ $teritorijos = $terStmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
 
                     <div class="mb-1">
-                        <label class="form-label">Strukturinis_padalinis</label>
+                        <label class="form-label">Struktūrinis padalinys</label>
                         <input name="Strukturinis_padalinis" class="form-control">
                     </div>
 
@@ -80,12 +80,12 @@ $teritorijos = $terStmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
 
                     <div class="mb-1">
-                        <label class="form-label">Vardas_pavarde</label>
+                        <label class="form-label">Vardas pavardė</label>
                         <input name="Vardas_pavarde" class="form-control">
                     </div>
 
                     <div class="mb-1">
-                        <label class="form-label">Telefono_nr</label>
+                        <label class="form-label">Telefono numeris</label>
                         <input name="Telefono_nr" class="form-control">
                     </div>
 
@@ -101,7 +101,7 @@ $teritorijos = $terStmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <div class="mb-1 form-check">
                         <input type="checkbox" name="M_parasas" value="1" class="form-check-input" id="m_parasas">
-                        <label class="form-check-label" for="m_parasas">M_parasas</label>
+                        <label class="form-check-label" for="m_parasas">M. parašas</label>
                     </div>
 
                     <div class="mb-1">
@@ -115,7 +115,7 @@ $teritorijos = $terStmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
 
                     <div class="mb-1">
-                        <label class="form-label">Teikejas</label>
+                        <label class="form-label">Teikėjas</label>
                         <select name="Teikejas" required class="form-select">
                             <option value="" disabled selected>— pasirinkti —</option>
                             <?php foreach ($allowedTeikejai as $t): ?>

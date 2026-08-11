@@ -47,6 +47,7 @@ $stmt->execute([':search' => '%' . $search . '%']);
 
 				<p>
 					<a href="create.php" class="btn btn-success">Sukurti naują įrašą</a>
+					<a href="export.php?search=<?php echo urlencode($search); ?>" class="btn btn-outline-secondary ms-2">Eksportuoti CSV</a>
 				</p>
 
 				<form method="GET" class="mb-3">
@@ -65,20 +66,19 @@ $stmt->execute([':search' => '%' . $search . '%']);
 						<thead>
 							<tr>
 								<th>Id</th>
-								<th>Moketojo_kodas</th>
-								<th>Vardas_pavarde</th>
-								<th>Telefono_nr</th>
+								<th>Mokėtojo kodas</th>
+								<th>Vardas pavardė</th>
+								<th>Telefono numeris</th>
 								<th>ICCID</th>
-								<th>Teritorinis padalinis</th>
+								<th>Teritorinis padalinys</th>
 								<th>Adresas</th>
-								<th>M_parasas</th>
+								<th>M. parašas</th>
 								<th>Modemas</th>
-								<th>Teikejas</th>
+								<th>Teikėjas</th>
 								<th>Veiksmai</th>
 							</tr>
 						</thead>
 						<tbody class="">
-							<?php $stmt = $pdo->query($baseSql . " ORDER BY i.Id ASC"); ?>
 							<?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
 								<tr>
 									<td><?php echo $row['Id']; ?></td>

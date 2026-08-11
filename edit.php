@@ -68,13 +68,13 @@ if (isset($_GET['id'])) {
                         <input type="hidden" name="Id" value="<?php echo (int) $editRow['Id']; ?>">
 
                         <div class="mb-3">
-                            <label class="form-label">Moketojo_kodas</label>
+                            <label class="form-label">Mokėtojo kodas</label>
                             <input name="Moketojo_kodas" value="<?php echo $editRow['Moketojo_kodas']; ?>"
                                 class="form-control">
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Teritorinis padalinis</label>
+                            <label class="form-label">Teritorinis padalinys</label>
                             <select name="Teritorija_Id" class="form-select">
                                 <option value="">— pasirinkti —</option>
                                 <?php foreach ($teritorijos as $t): ?>
@@ -85,7 +85,7 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Strukturinis_padalinis</label>
+                            <label class="form-label">Struktūrinis padalinys</label>
                             <input name="Strukturinis_padalinis" value="<?php echo ($editRow['Strukturinis_padalinis']); ?>"
                                 class="form-control">
                         </div>
@@ -96,13 +96,13 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Vardas_pavarde</label>
+                            <label class="form-label">Vardas pavardė</label>
                             <input name="Vardas_pavarde" value="<?php echo ($editRow['Vardas_pavarde']); ?>"
                                 class="form-control">
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Telefono_nr</label>
+                            <label class="form-label">Telefono numeris</label>
                             <input name="Telefono_nr" value="<?php echo ($editRow['Telefono_nr']); ?>" class="form-control">
                         </div>
 
@@ -118,7 +118,7 @@ if (isset($_GET['id'])) {
 
                         <div class="mb-3 form-check">
                             <input type="checkbox" name="M_parasas" value="1" <?php echo $editRow['M_parasas'] ? 'checked' : ''; ?> class="form-check-input" id="m_parasas_edit">
-                            <label class="form-check-label" for="m_parasas_edit">M_parasas</label>
+                            <label class="form-check-label" for="m_parasas_edit">M. parašas</label>
                         </div>
 
                         <div class="mb-3">
@@ -133,7 +133,7 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Teikejas</label>
+                            <label class="form-label">Teikėjas</label>
                             <select name="Teikejas" required class="form-select">
                                 <option value="" disabled>— pasirinkti —</option>
                                 <?php foreach ($allowedTeikejai as $t): ?>
