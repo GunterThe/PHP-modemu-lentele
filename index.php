@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php");
+  exit;
+}
 require_once __DIR__ . '/config.php';
 
 $dsn = sprintf('mysql:host=%s;dbname=%s;charset=%s', DB_HOST, DB_NAME, DB_CHARSET);
@@ -73,6 +78,10 @@ if (isset($_GET['export'])) {
 </head>
 
 <body>
+	<h1>Sveiki, <?php echo $_SESSION['username']; ?>!</h1>
+	<p class="mb-3">
+		<a href="logout.php" class="btn btn-danger">Atsijungti</a>
+	</p>
 	<div class="container py-4">
 		<div class="card shadow-sm">
 			<div class="card-body">

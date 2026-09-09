@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__ . '/config.php';
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php");
+  exit;
+}
 
 $dsn = sprintf('mysql:host=%s;dbname=%s;charset=%s', DB_HOST, DB_NAME, DB_CHARSET);
 $pdo = new PDO($dsn, DB_USER, DB_PASS);
