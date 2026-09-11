@@ -1,11 +1,11 @@
+<?php $search = $_GET['search'] ?? ''; ?>
 <div class="container py-4">
     <div class="card shadow-sm">
         <div class="card-body">
             <h1 class="h3">Informacija</h1>
 
             <p>
-                <a href="create.php" class="btn btn-success">Sukurti naują įrašą</a>
-                <a href="<?php echo basename(__FILE__); ?>?export=1&search=<?php echo urlencode($search); ?>" class="btn btn-outline-secondary ms-2">Eksportuoti CSV</a>
+                <a href="<?=BASE_URL?>informacija/add" class="btn btn-success">Sukurti naują įrašą</a>
             </p>
 
             <form method="GET" class="mb-3">
@@ -50,12 +50,12 @@
                                 <td><?php echo $row['Modemas']; ?></td>
                                 <td><?php echo $row['Teikejas']; ?></td>
                                 <td>
-                                    <a href="edit.php?id=<?php echo (int) $row['Id']; ?>"
+                                    <a href="<?=BASE_URL?>informacija/edit/<?= $row['Id']; ?>"
                                         class="btn btn-primary">Redaguoti</a>
-                                    <form method="post" class="d-inline"
-                                        onsubmit="return confirm('Ar tikrai ištrinti?');">
-                                        <input type="hidden" name="action" value="delete">
-                                        <input type="hidden" name="Id" value="<?php echo (int) $row['Id']; ?>">
+                                    <form method="POST"
+                                        action="<?=BASE_URL?>informacija/delete/<?= $row['Id']; ?>"
+                                        onsubmit="return confirm('Ar tikrai norite ištrinti?');"
+                                        style="display:inline;">
                                         <button type="submit" class="btn btn-danger">Ištrinti</button>
                                     </form>
                                 </td>

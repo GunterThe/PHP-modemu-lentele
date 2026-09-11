@@ -1,12 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/config.php';
-$dsn = sprintf('mysql:host=%s;dbname=%s;charset=%s', DB_HOST, DB_NAME, DB_CHARSET);
-$pdo = new PDO($dsn, DB_USER, DB_PASS);
-
 $allowedTeikejai = ['Bitė', 'Tele2', 'Telia', 'Pildyk', 'Labas', 'Ežys'];
-
-$terStmt = $pdo->query('SELECT Id, Teritorinis_padalinis, Adresas FROM Teritorija ORDER BY Teritorinis_padalinis ASC');
-$teritorijos = $terStmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="container py-4">
@@ -24,7 +17,7 @@ $teritorijos = $terStmt->fetchAll(PDO::FETCH_ASSOC);
                         <label class="form-label">Teritorinis padalinis</label>
                         <select name="Teritorija_Id" class="form-select">
                             <option value="">— pasirinkti —</option>
-                            <?php foreach ($teritorijos as $t): ?>
+                            <?php foreach ($data['teritorija'] as $t): ?>
                                 <option value="<?php echo (int) $t['Id']; ?>"><?php echo ($t['Teritorinis_padalinis']); ?>
                                 </option>
                             <?php endforeach; ?>

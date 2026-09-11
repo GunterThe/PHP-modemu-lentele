@@ -80,6 +80,17 @@ class Informacija
         return $this->db->execute();
     }
 
+    public function searchInformacija($search)
+    {
+        $basesql = "SELECT i.Id, i.Moketojo_kodas, i.Strukturinis_padalinis, i.Pareigos, i.Vardas_pavarde, i.Telefono_nr, i.IP, i.ICCID, i.M_parasas, i.Pastaba, i.Modemas, i.Teikejas, t.Teritorinis_padalinis, t.Adresas, i.Teritorija_Id
+		FROM Informacija i
+		LEFT JOIN Teritorija t ON i.Teritorija_Id = t.Id";
+        $this->db->query($basesql . " WHERE i.Moketojo_kodas LIKE :search OR i.Vardas_pavarde LIKE :search OR i.Telefono_nr LIKE :search");
+        $this->db->bind(':search', '%' . $search . '%');
+        $this->db->execute();
+        return $this->db->results();
+    }
+
 }
 
 ?>
