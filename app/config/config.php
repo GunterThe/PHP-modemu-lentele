@@ -4,3 +4,4 @@ define('DB_NAME', getenv('DB_NAME') ?: 'Modemai');
 define('DB_USER', getenv('DB_USER') ?: 'root');
 define('DB_PASS', getenv('DB_PASS') ?: '');
 define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8mb4');
+define('BASE_URL', 'http://localhost/PHP-modemu-lentele/public/');
